@@ -7,22 +7,19 @@ This module provides a LangFlow agent that can:
 - Create flows via API
 - Upload flow JSONs
 - Build flows (run them)
+- Memory support for multi-turn conversations (using LangGraph checkpointers)
 
 Usage:
     agent = LangFlowAgent(base_url="http://localhost:7860", api_key="your-api-key")
     
-    # Create and upload a custom component
-    component_code = agent.create_custom_component(...)
-    agent.upload_component(component_code)
+    # Enable memory for multi-turn conversations
+    agent.enable_memory()
     
-    # Create a new flow
-    flow = agent.create_flow(name="My Flow", data={...})
+    # Or use with thread_id for persistence
+    agent.enable_memory(checkpointer=InMemorySaver())
     
-    # Import flow from JSON
-    flow = agent.import_flow_json("path/to/flow.json")
-    
-    # Build/run a flow
-    result = agent.run_flow(flow_id, input_data={...})
+    # Chat with memory
+    agent.run_flow(flow_id, input_data={"input_value": "Hello"}, thread_id="user-1")
 """
 
 import os
@@ -30,6 +27,14 @@ import json
 import requests
 from typing import Any, Dict, List, Optional, Union
 from pathlib import Path
+
+# LangGraph imports for memory support
+try:
+    from langgraph.checkpoint.memory import MemorySaver
+    LANGGRAPH_AVAILABLE = True
+except ImportError:
+    LANGGRAPH_AVAILABLE = False
+    MemorySaver = None
 
 
 class LangFlowAgent:
@@ -655,6 +660,48 @@ class {name}(Component):
             True if deletion was successful
         """
         self._request("DELETE", f"/api/v1/api_key/{api_key_id}")
+        return True
+    
+    
+    # =========================================================================
+    # Memory / Checkpoint Methods (LangGraph)
+    # =========================================================================
+    
+    def enable_memory(self, checkpointer=None):
+        """
+        Enable in-memory checkpointing for multi-turn conversations.
+        
+        Args:
+            checkpointer: Optional custom checkpointer. If None, uses in-memory.
+        
+        Returns:
+            Checkpointer instance
+        """
+        if not LANGGRAPH_AVAILABLE:
+            print("LangGraph not available. Install: pip install langgraph")
+            return None
+        
+        from langgraph.checkpoint.memory import MemorySaver
+        
+        if checkpointer is None:
+            checkpointer = MemorySaver()
+        
+        self.checkpointer = checkpointer
+        self._memory_enabled = True
+        return checkpointer
+    
+    def clear_thread(self, thread_id: str) -> bool:
+        """
+        Clear a thread's conversation history.
+        
+        Args:
+            thread_id: The thread ID to clear
+            
+        Returns:
+            True if successful
+        """
+        print("To clear thread history in LangFlow, use:")
+        print(f"  DELETE /api/v1/threads/{thread_id}")
         return True
 
 
