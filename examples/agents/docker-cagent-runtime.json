@@ -1,0 +1,16 @@
+{
+  "agent_id": "agent_docker_cagent_001",
+  "did": "did:web:agents.agennext.dev:docker-cagent-runtime",
+  "publisher_id": "publisher_docker",
+  "publisher_did": "did:web:docker.com",
+  "name": "Docker Agent Runtime",
+  "source_repository": "https://github.com/docker/cagent",
+  "source_documentation": "https://docs.docker.com/ai/cagent/",
+  "short_description": "Multi-agent runtime for building, sharing, and running specialized agent teams using Docker Agent/cagent.",
+  "categories": ["runtime", "multi-agent", "developer-tools"],
+  "capabilities": ["agent_team_orchestration", "mcp_tooling", "oci_agent_packaging", "terminal_runtime"],
+  "protocol_bindings": ["mcp", "custom"],
+  "deployment_options": ["local", "oci_registry", "self_hosted"],
+  "verification_status": "source_verified",
+  "lifecycle_state": "active"
+}
