@@ -1,0 +1,13 @@
+{
+  "agent_id": "agent_langgraph_001",
+  "did": "did:web:agents.agennext.dev:langgraph-workflow-agent",
+  "publisher_id": "publisher_langchain",
+  "publisher_did": "did:web:langchain.com",
+  "name": "LangGraph Workflow Agent",
+  "source_repository": "https://github.com/langchain-ai/langgraph",
+  "short_description": "Stateful, durable workflow agent built on LangGraph.",
+  "categories": ["workflow", "stateful-agents"],
+  "capabilities": ["checkpointing", "human_in_the_loop", "graph_execution"],
+  "verification_status": "source_verified",
+  "lifecycle_state": "active"
+}
