@@ -1,0 +1,13 @@
+{
+  "agent_id": "agent_langflow_001",
+  "did": "did:web:agents.agennext.dev:langflow-visual-agent",
+  "publisher_id": "publisher_langflow",
+  "publisher_did": "did:web:langflow.org",
+  "name": "Langflow Visual Agent",
+  "source_repository": "https://github.com/langflow-ai/langflow",
+  "short_description": "Visually designed agent workflow built with Langflow.",
+  "categories": ["visual-builder", "workflow"],
+  "capabilities": ["drag_and_drop_design", "tool_calling", "api_deployment"],
+  "verification_status": "source_verified",
+  "lifecycle_state": "active"
+}
