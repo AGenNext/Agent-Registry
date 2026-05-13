@@ -1,0 +1,13 @@
+{
+  "agent_id": "agent_llamaindex_001",
+  "did": "did:web:agents.agennext.dev:llamaindex-rag-agent",
+  "publisher_id": "publisher_llamaindex",
+  "publisher_did": "did:web:llamaindex.ai",
+  "name": "LlamaIndex RAG Agent",
+  "source_repository": "https://github.com/run-llama/llama_index",
+  "short_description": "Retrieval-augmented generation agent built with LlamaIndex.",
+  "categories": ["rag", "knowledge"],
+  "capabilities": ["document_ingestion", "retrieval", "query_engine", "agentic_rag"],
+  "verification_status": "source_verified",
+  "lifecycle_state": "active"
+}
