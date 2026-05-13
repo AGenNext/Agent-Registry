@@ -1,4 +1,5 @@
 export type AgentListing = {
+  canonical_id: string;
   agent_id: string;
   did: string;
   publisher_id: string;
@@ -14,6 +15,7 @@ export type AgentListing = {
 
 export const agents: AgentListing[] = [
   {
+    canonical_id: 'did:web:agents.agennext.dev:docker-cagent-runtime',
     agent_id: 'agent_docker_cagent_001',
     did: 'did:web:agents.agennext.dev:docker-cagent-runtime',
     publisher_id: 'publisher_docker',
@@ -24,9 +26,10 @@ export const agents: AgentListing[] = [
     categories: ['runtime', 'multi-agent', 'developer-tools'],
     capabilities: ['agent_team_orchestration', 'mcp_tooling', 'oci_agent_packaging', 'terminal_runtime'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:google-adk-agent',
     agent_id: 'agent_google_adk_001',
     did: 'did:web:agents.agennext.dev:google-adk-agent',
     publisher_id: 'publisher_google',
@@ -37,9 +40,10 @@ export const agents: AgentListing[] = [
     categories: ['framework', 'agent-development'],
     capabilities: ['tool_calling', 'session_management', 'evaluation', 'deployment'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:langgraph-workflow-agent',
     agent_id: 'agent_langgraph_001',
     did: 'did:web:agents.agennext.dev:langgraph-workflow-agent',
     publisher_id: 'publisher_langchain',
@@ -50,9 +54,10 @@ export const agents: AgentListing[] = [
     categories: ['workflow', 'stateful-agents'],
     capabilities: ['checkpointing', 'human_in_the_loop', 'graph_execution'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:crewai-research-crew',
     agent_id: 'agent_crewai_research_001',
     did: 'did:web:agents.agennext.dev:crewai-research-crew',
     publisher_id: 'publisher_crewai',
@@ -63,9 +68,10 @@ export const agents: AgentListing[] = [
     categories: ['research', 'multi-agent'],
     capabilities: ['web_research', 'analysis', 'report_generation'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:microsoft-autogen-coordinator',
     agent_id: 'agent_microsoft_autogen_001',
     did: 'did:web:agents.agennext.dev:microsoft-autogen-coordinator',
     publisher_id: 'publisher_microsoft',
@@ -76,9 +82,10 @@ export const agents: AgentListing[] = [
     categories: ['orchestration', 'multi-agent'],
     capabilities: ['agent_coordination', 'tool_use', 'workflow_execution'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:agno-knowledge-agent',
     agent_id: 'agent_agno_001',
     did: 'did:web:agents.agennext.dev:agno-knowledge-agent',
     publisher_id: 'publisher_agno',
@@ -89,9 +96,10 @@ export const agents: AgentListing[] = [
     categories: ['knowledge', 'memory'],
     capabilities: ['rag', 'memory', 'tool_use'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:dspy-optimizer-agent',
     agent_id: 'agent_dspy_001',
     did: 'did:web:agents.agennext.dev:dspy-optimizer-agent',
     publisher_id: 'publisher_stanfordnlp',
@@ -102,9 +110,10 @@ export const agents: AgentListing[] = [
     categories: ['optimization', 'evaluation'],
     capabilities: ['prompt_optimization', 'teleprompting', 'evaluation'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:langflow-visual-agent',
     agent_id: 'agent_langflow_001',
     did: 'did:web:agents.agennext.dev:langflow-visual-agent',
     publisher_id: 'publisher_langflow',
@@ -115,9 +124,10 @@ export const agents: AgentListing[] = [
     categories: ['visual-builder', 'workflow'],
     capabilities: ['drag_and_drop_design', 'tool_calling', 'api_deployment'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:dify-enterprise-agent',
     agent_id: 'agent_dify_001',
     did: 'did:web:agents.agennext.dev:dify-enterprise-agent',
     publisher_id: 'publisher_dify',
@@ -128,9 +138,10 @@ export const agents: AgentListing[] = [
     categories: ['enterprise', 'application-platform'],
     capabilities: ['workflow_orchestration', 'knowledge_base', 'api_publishing'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
+    lifecycle_state: 'active'
   },
   {
+    canonical_id: 'did:web:agents.agennext.dev:llamaindex-rag-agent',
     agent_id: 'agent_llamaindex_001',
     did: 'did:web:agents.agennext.dev:llamaindex-rag-agent',
     publisher_id: 'publisher_llamaindex',
@@ -141,8 +152,8 @@ export const agents: AgentListing[] = [
     categories: ['rag', 'knowledge'],
     capabilities: ['document_ingestion', 'retrieval', 'query_engine', 'agentic_rag'],
     verification_status: 'source_verified',
-    lifecycle_state: 'active',
-  },
+    lifecycle_state: 'active'
+  }
 ];
 
 export const categories = Array.from(new Set(agents.flatMap((agent) => agent.categories))).sort();
