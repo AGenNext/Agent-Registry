@@ -1,0 +1,17 @@
+{
+  "agent_id": "agent_legal_contract_review_001",
+  "did": "did:web:agents.example.com:legal-contract-review-agent",
+  "publisher_id": "publisher_legal_ai",
+  "publisher_did": "did:web:legal-ai.example.com",
+  "name": "Legal Contract Review Agent",
+  "version": "1.0.0",
+  "short_description": "Flags risky clauses, compares templates, and suggests negotiation language.",
+  "capabilities": ["clause_extraction", "risk_detection", "redlining"],
+  "required_permissions": ["read_documents", "write_comments"],
+  "risk_profile": {
+    "level": "high",
+    "human_approval_required": true
+  },
+  "verification_status": "verified",
+  "lifecycle_state": "active"
+}
