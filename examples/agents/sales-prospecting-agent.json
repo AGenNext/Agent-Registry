@@ -1,0 +1,14 @@
+{
+  "agent_id": "agent_sales_prospecting_001",
+  "did": "did:web:agents.example.com:sales-prospecting-agent",
+  "publisher_id": "publisher_example_cloud",
+  "publisher_did": "did:web:publisher.example.com",
+  "name": "Sales Prospecting Agent",
+  "version": "1.0.0",
+  "short_description": "Researches accounts, finds buying signals, and drafts personalized outreach.",
+  "capabilities": ["account_research", "lead_scoring", "email_generation"],
+  "protocol_bindings": ["mcp", "openapi"],
+  "required_permissions": ["read_crm", "read_web", "write_drafts"],
+  "verification_status": "verified",
+  "lifecycle_state": "active"
+}
