@@ -1,0 +1,23 @@
+{
+  "agent_id": "agent_customer_support_001",
+  "did": "did:web:agents.example.com:customer-support-agent",
+  "publisher_id": "publisher_example_cloud",
+  "publisher_did": "did:web:publisher.example.com",
+  "name": "Customer Support Agent",
+  "version": "1.0.0",
+  "short_description": "Resolves support tickets, drafts replies, and escalates high-risk customer issues.",
+  "capabilities": ["ticket_triage", "reply_generation", "sentiment_detection", "handoff"],
+  "protocol_bindings": ["mcp", "openapi", "webhook"],
+  "required_permissions": ["read_tickets", "write_drafts", "create_escalations"],
+  "data_access_profile": {
+    "pii": true,
+    "customer_data": true,
+    "retention": "tenant_policy"
+  },
+  "risk_profile": {
+    "level": "medium",
+    "human_review_required": true
+  },
+  "verification_status": "verified",
+  "lifecycle_state": "active"
+}
